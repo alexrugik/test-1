@@ -16,10 +16,6 @@ export class EntryService {
   private readonly totalCount = 10000 / 20;
   private entries: IEntry[] = [];
 
-  getEntry(entry: IEntry) {
-
-  }
-
   getEntries(params: HttpParams): Observable<IEntry[]> {
     this.entries = [...this.entries, ...this.getGeneratedEntriesPage()];
     return of(this.entries);
