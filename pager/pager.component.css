@@ -1,0 +1,6 @@
+.pager-wrapper {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}

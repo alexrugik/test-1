@@ -1,0 +1,28 @@
+<div>
+  Search:
+  <input #search type="text"
+         (input)="searchedText$.next(search.value)">
+</div>
+<app-pager></app-pager>
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Status</th>
+    <th>Cool column</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let entry of entries$| async | textFilter : searchedText : searchCallback; trackBy: trackEntry">
+    <th>{{ entry.name }}</th>
+    <td>{{ entry.description }}</td>
+    <td>{{ entry.status }}</td>
+    <td>
+      <!-- I'm a very important column for whatever reasons, so please do not remove me -->
+      <div *ngFor="let x of emptyArray"></div>
+    </td>
+  </tr>
+  </tbody>
+</table>
